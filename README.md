@@ -49,7 +49,7 @@ Follow these steps to set up your Okta SAML application:
    - **Single Sign-On URL (SSO URL):**  
      Provide the URL where Okta will send authentication requests. This is typically provided by Okta or can be set to your custom SSO endpoint.
    - **Audience URI (SP Entity ID):**  
-     Enter the Service Provider Entity ID that matches your backend’s configuration.
+     Enter the Service Provider Entity ID such as 'application-test'.
 
 4. **Set Up Attribute Statements (Claims):**
    - Configure the attributes you want included in the SAML assertion:
@@ -72,13 +72,13 @@ Follow these steps to set up your Okta SAML application:
 Your backend code requires several variables from Okta. Here is where you can find each of them in the Okta Admin Console:
 
 - **OKTA_ENTITY_ID (Service Provider Entity ID/Audience URI):**
-  - **Where to Find:** In your Okta SAML application settings, under the **General** section, locate the **Audience URI** (sometimes also referred to as the SP Entity ID). This value should be used as your `OKTA_ENTITY_ID` in the backend configuration.
+  - **Where to Find:** In your Okta SAML application settings, under the **General** section, locate the **Audience URI** (sometimes also referred to as the SP Entity ID or Audience Restriction). This value should be used as your `OKTA_ENTITY_ID` in the backend configuration.
 
 - **OKTA_SSO_URL (Single Sign-On URL):**
   - **Where to Find:** Navigate to the **Sign On** tab or section within your Okta application configuration. The **SSO URL** is provided as the endpoint to which users are redirected for SAML authentication. Use this value as your `OKTA_SSO_URL`.
 
 - **OKTA_ISSUER (Identity Provider Issuer):**
-  - **Where to Find:** This is typically found in the Okta metadata XML file under the `<EntityDescriptor>` element or within the **Identity Provider** details of your Okta configuration. It represents the issuer of SAML assertions and should be set as `OKTA_ISSUER`.
+  - **Where to Find:** Navigate to the **Sign On** tab or section within your Okta application configuration. The **Issuer**. It represents the issuer of SAML assertions and should be set as `OKTA_ISSUER`.
 
 - **OKTA_CERTIFICATE (X.509 Certificate):**
   - **Where to Find:** In your Okta SAML application's settings, look for the **SAML Signing Certificate** or a similar section. You can either copy the certificate details or download it. This certificate (in PEM format) is used to verify the SAML response signature and must be set as `OKTA_CERTIFICATE` in your backend configuration.
