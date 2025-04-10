@@ -16,7 +16,7 @@ This guide outlines the steps for creating and configuring an Okta SAML applicat
 
 ## Overview
 
-Your FastAPI backend leverages Okta as its SAML Identity Provider. When users log in:
+Your backend leverages Okta as its SAML Identity Provider. When users log in:
 
 - They are redirected to Okta for authentication.
 - Okta authenticates users and sends a SAML assertion back to the backend.
@@ -27,7 +27,7 @@ Your FastAPI backend leverages Okta as its SAML Identity Provider. When users lo
 ## Prerequisites
 
 - **Okta Account:** Ensure you have an Okta Developer or Admin account to access the Admin Console.
-- **Backend Application:** A FastAPI-based backend integrated with the provided SAML code.
+- **Backend Application:** A backend integrated with the SAML code.
 - **Metadata File:** Download the Okta SAML metadata XML file from your Okta application settings and place it in your project directory (for example, as `metadata.xml`).
 
 ---
