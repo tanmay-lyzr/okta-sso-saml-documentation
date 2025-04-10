@@ -46,17 +46,16 @@ Follow these steps to set up your Okta SAML application:
 
 3. **Configure General Settings:**
    - **App Name:** Enter a descriptive name (e.g., “My Backend SAML App”).
-   - **Single Sign-On URL (SSO URL):**  
-     Provide the URL where Okta will send authentication requests. This is typically provided by Okta or can be set to your custom SSO endpoint.
+   - **Single Sign-On URL (The location where the SAML assertion is sent with a HTTP POST. This is often referred to as the SAML Assertion Consumer Service (ACS) URL for your application.):**  
+     Provide the URL where Okta will send authentication requests. This is typically provided by Okta or can be set to your custom SSO endpoint. Set it as the ACS URL.
    - **Audience URI (SP Entity ID):**  
      Enter the Service Provider Entity ID such as 'application-test'.
 
 4. **Set Up Attribute Statements (Claims):**
-   - Configure the attributes you want included in the SAML assertion:
+   - Configure the attributes you want included in the SAML assertion. Required attributes are:
      - `email`
      - `firstName`
-     - `lastName`  
-   - The names should match the expectations in your backend SAML callback logic.
+     - `lastName`
 
 5. **Download the Metadata File:**
    - After configuration, download the metadata XML file from Okta.
